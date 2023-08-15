@@ -1,5 +1,9 @@
 import unittest
-from Chapter7.TradingStrategy import TradingStrategy
+
+from Chapter7_02.TradingStrategy import TradingStrategy
+
+
+# from Chapter7.TradingStrategy import TradingStrategy
 
 
 class TestMarketSimulator(unittest.TestCase):

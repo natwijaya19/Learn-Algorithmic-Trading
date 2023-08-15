@@ -2,12 +2,12 @@
 from collections import deque
 
 
-def average(lst: deque):
+def average(lst):
     return sum(lst) / len(lst)
 
 
 class TradingStrategyDualMA:
-    def __init__(self, ob_2_ts: deque, ts_2_om: deque, om_2_ts: deque) -> None:
+    def __init__(self, ob_2_ts, ts_2_om, om_2_ts):
         self.orders = []
         self.order_id = 0
 
@@ -54,7 +54,7 @@ class TradingStrategyDualMA:
             return True
         return False
 
-    def buy_sell_or_hold_something(self, book_event: dict[str, str | int]):
+    def buy_sell_or_hold_something(self, book_event):
         if self.long_signal and self.paper_position <= 0:
             self.create_order(book_event, book_event["bid_quantity"], "buy")
             self.paper_position += book_event["bid_quantity"]
